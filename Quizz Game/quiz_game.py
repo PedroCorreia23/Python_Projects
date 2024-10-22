@@ -48,38 +48,50 @@ def load_questions():
 '''
 
 def get_easy_q(questions):
-        
-    easy_questions = [q for q in questions if q['category'] == "[Easy]"]
-    return easy_questions
+    return [q for q in questions if q['category'] == "[Easy]"]
 
-def get_random_easy_question(questions):
-    easy_questions = get_easy_q(questions)
-    
-    # Choose a random question from the list of easy questions
-    if easy_questions:
-        ez_q =  random.choice(easy_questions)
-        return ez_q
-    else:
-        return None
+def get_med_q(questions):
+    return [q for q in questions if q['category'] == "[Medium]"]
+
+def get_hard_q(questions):
+    return [q for q in questions if q['category'] == "[Hard]"]
+
+def get_super_hard_q(questions):
+    return [q for q in questions if q['category'] == "[Super Hard]"]
+
+def get_random_question(questions, difficulty):
+    if difficulty == "easy":
+        return random.choice(get_easy_q(questions))
+    elif difficulty == "medium":
+        return random.choice(get_med_q(questions))
+    elif difficulty == "hard":
+        return random.choice(get_hard_q(questions))
+    elif difficulty == "super hard":
+        return random.choice(get_super_hard_q(questions))
+    return None
 
 def game():
 
     is_game_over = False
-
+    n_question = 0
     questions = load_questions()
 
-    random_easy_question = get_random_easy_question(questions)
+    while((is_game_over != True) or (n_question < 10)):
 
-    if random_easy_question:
-        print(f"Question: {random_easy_question['question']}")
-        for choice in random_easy_question['choices']:
+
+        
+        
+
+
+    random_question = get_random_question(questions)
+
+    if random_question:
+        print(f"Question: {random_question['question']}")
+        for choice in random_question['choices']:
             print(choice)
-        print(f"Correct Answer: {random_easy_question['correct_answer']}")
+        print(f"Correct Answer: {random_question['correct_answer']}")
     else:
         print("No easy questions found.")
-
-     
-
 
 main()
 
