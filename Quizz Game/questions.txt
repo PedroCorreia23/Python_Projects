@@ -1,0 +1,19 @@
+[Easy]
+What is the capital city of France?|A) Berlin|B) Madrid|C) Paris|D) Rome|C
+Which planet is known as the Red Planet?|A) Earth|B) Mars|C) Jupiter|D) Venus|B
+Which animal is known as the 'King of the Jungle'?|A) Lion|B) Elephant|C) Tiger|D) Giraffe|A
+
+[Medium]
+What is the hardest natural substance on Earth?|A) Gold|B) Diamond|C) Iron|D) Platinum|B
+In which year did the Titanic sink?|A) 1912|B) 1915|C) 1918|D) 1920|A
+Who wrote the novel '1984'?|A) George Orwell|B) Ernest Hemingway|C) F. Scott Fitzgerald|D) Mark Twain|A
+
+[Hard]
+Which country is known as the Land of the Rising Sun?|A) China|B) Japan|C) South Korea|D) Thailand|B
+What is the smallest prime number?|A) 0|B) 1|C) 2|D) 3|C
+Who painted the ceiling of the Sistine Chapel?|A) Leonardo da Vinci|B) Michelangelo|C) Raphael|D) Donatello|B
+
+[Super Difficult]
+What is the speed of light in a vacuum?|A) 300,000 km/s|B) 150,000 km/s|C) 100,000 km/s|D) 500,000 km/s|A
+Who developed the theory of relativity?|A) Isaac Newton|B) Albert Einstein|C) Galileo Galilei|D) Niels Bohr|B
+What is the chemical symbol for the element with the atomic number 1?|A) He|B) H|C) O|D) N|B
