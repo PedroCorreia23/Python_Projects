@@ -99,35 +99,43 @@ def game():
         else:
             question = get_random_question(questions, difficulty[3])  
 
-        if question:
-            print(question['question'])
-            print("Choices:")
-            for idx, choice in enumerate(question['choices'], 1):
-                    print(f"{idx}. {choice}")
-            user_input = input("Lock in your final answer: ")[0].upper()
-            if user_input != question['correct_answer']:
-                print(f"That's incorrect!\nThe correct answer was {question['correct_answer']}. Better luck next time!\n")
-                is_game_over = True
-            else:
-                print(f"Congratulations! You got it right! The correct answer is {question['correct_answer']}.\n")
+        if n_question == 10:
 
+            print("This is the final question! All or nothing, take your time...\n")
+
+            if question:
+                print(question['question'])
+                print("Choices:")
+                for idx, choice in enumerate(question['choices'], 1):
+                        print(f"{idx}. {choice}")
+
+                user_input = input("Lock in your final answer: ")[0].upper()
+                if user_input != question['correct_answer']:
+                    print(f"That's incorrect!\nThe correct answer was {question['correct_answer']}. Better luck next time!\n")
+                    
+                else:
+                    print(f"Congratulations! You got it right! The correct answer is {question['correct_answer']}.\n")
+                    print("And that's it! You've completed the final question. Well done!")
+
+        else: 
+            if question:
+                print(question['question'])
+                print("Choices:")
+                for idx, choice in enumerate(question['choices'], 1):
+                        print(f"{idx}. {choice}")
+
+                user_input = input("Lock in your final answer: ")[0].upper()
+                if user_input != question['correct_answer']:
+                    print(f"That's incorrect!\nThe correct answer was {question['correct_answer']}. Better luck next time!\n")
+                    is_game_over = True
+                else:
+                    print(f"Congratulations! You got it right! The correct answer is {question['correct_answer']}.\n")
             
-
         n_question += 1
 
         if n_question == 10:
             is_game_over = True
 
-        
-'''
-    if random_question:
-        print(f"Question: {random_question['question']}")
-        for choice in random_question['choices']:
-            print(choice)
-        print(f"Correct Answer: {random_question['correct_answer']}")
-    else:
-        print("No easy questions found.")
-'''
 main()
 
 
