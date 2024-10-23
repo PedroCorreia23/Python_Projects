@@ -84,6 +84,7 @@ def game():
     questions = load_questions()
     difficulty = ["easy", "medium", "hard", "super hard"] 
     
+    
     while not is_game_over and n_question < 10:
 
         question_num(n_question)
@@ -103,7 +104,14 @@ def game():
             print("Choices:")
             for idx, choice in enumerate(question['choices'], 1):
                     print(f"{idx}. {choice}")
-            print(f"Correct answer: {question['correct_answer']}\n")
+            user_input = input("Lock in your final answer: ")[0].upper()
+            if user_input != question['correct_answer']:
+                print(f"That's incorrect!\nThe correct answer was {question['correct_answer']}. Better luck next time!\n")
+                is_game_over = True
+            else:
+                print(f"Congratulations! You got it right! The correct answer is {question['correct_answer']}.\n")
+
+            
 
         n_question += 1
 
