@@ -2,18 +2,30 @@
 What is the capital city of France?|A) Berlin|B) Madrid|C) Paris|D) Rome|C
 Which planet is known as the Red Planet?|A) Earth|B) Mars|C) Jupiter|D) Venus|B
 Which animal is known as the 'King of the Jungle'?|A) Lion|B) Elephant|C) Tiger|D) Giraffe|A
+Which ocean is the largest?|A) Atlantic Ocean|B) Pacific Ocean|C) Indian Ocean|D) Arctic Ocean|B
+What is the primary color of a banana?|A) Red|B) Green|C) Yellow|D) Blue|C
+Which sport is known as "the beautiful game"?|A) Basketball|B) Football|C) Tennis|D) Cricket|B
 
 [Medium]
 What is the hardest natural substance on Earth?|A) Gold|B) Diamond|C) Iron|D) Platinum|B
 In which year did the Titanic sink?|A) 1912|B) 1915|C) 1918|D) 1920|A
 Who wrote the novel '1984'?|A) George Orwell|B) Ernest Hemingway|C) F. Scott Fitzgerald|D) Mark Twain|A
+Which country gifted the Statue of Liberty to the USA?|A) France|B) Spain|C) Italy|D) Germany|A
+What is the capital of Australia?|A) Sydney|B) Canberra|C) Melbourne|D) Brisbane|B
+Which is the longest river in the world?|A) Nile|B) Amazon|C) Yangtze|D) Mississippi|B
 
 [Hard]
 Which country is known as the Land of the Rising Sun?|A) China|B) Japan|C) South Korea|D) Thailand|B
 What is the smallest prime number?|A) 0|B) 1|C) 2|D) 3|C
 Who painted the ceiling of the Sistine Chapel?|A) Leonardo da Vinci|B) Michelangelo|C) Raphael|D) Donatello|B
+In which year was the first iPhone released?|A) 2005|B) 2007|C) 2010|D) 2012|B
+Which element has the chemical symbol 'Fe'?|A) Fluorine|B) Iron|C) Silver|D) Lead|B
+Who invented the World Wide Web?|A) Tim Berners-Lee|B) Steve Jobs|C) Bill Gates|D) Mark Zuckerberg|A
 
-[Super Difficult]
+[Super Hard]
 What is the speed of light in a vacuum?|A) 300,000 km/s|B) 150,000 km/s|C) 100,000 km/s|D) 500,000 km/s|A
 Who developed the theory of relativity?|A) Isaac Newton|B) Albert Einstein|C) Galileo Galilei|D) Niels Bohr|B
 What is the chemical symbol for the element with the atomic number 1?|A) He|B) H|C) O|D) N|B
+What is the Planck constant?|A) 6.626 × 10⁻³⁴ Js|B) 3.141 × 10⁻⁴ Js|C) 9.109 × 10⁻³¹ Js|D) 1.602 × 10⁻¹⁹ Js|A
+Who first proposed the idea of quantum mechanics?|A) Niels Bohr|B) Max Planck|C) Albert Einstein|D) Erwin Schrödinger|B
+What is Schrödinger's famous thought experiment related to?|A) Quantum entanglement|B) The uncertainty principle|C) A cat in a box|D) Black holes|C
