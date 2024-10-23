@@ -87,18 +87,30 @@ def game():
     while not is_game_over and n_question < 10:
 
         question_num(n_question)
-            
+
+        # Choose difficulty based on question number
         if n_question < 3:
-            get_random_question(questions, difficulty[0])
-        if n_question >= 3 and n_question < 6:
-            get_random_question(questions, difficulty[1])
-        if n_question >= 6 and n_question < 9:
-            get_random_question(questions, difficulty[2])
+            question = get_random_question(questions, difficulty[0]) 
+        elif n_question >= 3 and n_question < 6:
+            question = get_random_question(questions, difficulty[1])  
+        elif n_question >= 6 and n_question < 9:
+            question = get_random_question(questions, difficulty[2])  
         else:
-            get_random_question(questions, difficulty[3])
-        
+            question = get_random_question(questions, difficulty[3])  
+
+        if question:
+            print(question['question'])
+            print("Choices:")
+            for idx, choice in enumerate(question['choices'], 1):
+                    print(f"{idx}. {choice}")
+            print(f"Correct answer: {question['correct_answer']}\n")
+
+        n_question += 1
+
         if n_question == 10:
             is_game_over = True
+
+        
 '''
     if random_question:
         print(f"Question: {random_question['question']}")
