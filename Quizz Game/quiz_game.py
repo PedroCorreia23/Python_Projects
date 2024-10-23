@@ -70,32 +70,36 @@ def get_random_question(questions, difficulty):
         return random.choice(get_super_hard_q(questions))
     return None
 
-def question_num():
+def question_num(n_question):
     positions = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "Last"]
 
-    for i in range(len(positions)):
-        print(positions[i] + " question")
+    if n_question < len(positions):
+        print(positions[n_question] + " question")
+        
 
 def game():
 
     is_game_over = False
     n_question = 0
     questions = load_questions()
+    difficulty = ["easy", "medium", "hard", "super hard"] 
     
+    while not is_game_over and n_question < 10:
 
-    while((is_game_over != True) or (n_question < 10)):
-
-        question_num()
+        question_num(n_question)
+            
+        if n_question < 3:
+            get_random_question(questions, difficulty[0])
+        if n_question >= 3 and n_question < 6:
+            get_random_question(questions, difficulty[1])
+        if n_question >= 6 and n_question < 9:
+            get_random_question(questions, difficulty[2])
+        else:
+            get_random_question(questions, difficulty[3])
         
-        
-        
-
-        
-        
-
-
-    random_question = get_random_question(questions)
-
+        if n_question == 10:
+            is_game_over = True
+'''
     if random_question:
         print(f"Question: {random_question['question']}")
         for choice in random_question['choices']:
@@ -103,7 +107,7 @@ def game():
         print(f"Correct Answer: {random_question['correct_answer']}")
     else:
         print("No easy questions found.")
-
+'''
 main()
 
 
