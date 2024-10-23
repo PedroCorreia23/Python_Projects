@@ -5,12 +5,12 @@ def main():
 
     print("****WELCOME TO THE QUIZZ GAME****")
     user_input = input("Press ENTER when you are ready to play\n")
-    
-    if user_input == "":
-        game()
-    else:
-        pass
-        
+
+    while user_input != "":  
+        user_input = input() 
+
+    game()
+
 def load_questions():
     with open('questions.txt', 'r', encoding='utf-8') as file:
             
@@ -37,15 +37,6 @@ def load_questions():
                 })
 
     return questions
-'''
-    for q in questions:
-        print(f"Category: {q['category']}")
-        print(f"Question: {q['question']}")
-        print(f"Choices: {q['choices']}")
-        print(f"Correct Answer: {q['correct_answer']}")
-        print("-" * 40)
-   
-'''
 
 def get_easy_q(questions):
     return [q for q in questions if q['category'] == "[Easy]"]
@@ -76,14 +67,12 @@ def question_num(n_question):
     if n_question < len(positions):
         print(positions[n_question] + " question")
         
-
 def game():
 
     is_game_over = False
     n_question = 0
     questions = load_questions()
     difficulty = ["easy", "medium", "hard", "super hard"] 
-    
     
     while not is_game_over and n_question < 10:
 
@@ -99,7 +88,7 @@ def game():
         else:
             question = get_random_question(questions, difficulty[3])  
 
-        if n_question == 10:
+        if n_question == 9:
 
             print("This is the final question! All or nothing, take your time...\n")
 
@@ -124,7 +113,7 @@ def game():
                 for idx, choice in enumerate(question['choices'], 1):
                         print(f"{idx}. {choice}")
 
-                user_input = input("Lock in your final answer: ")[0].upper()
+                user_input = input("Lock in your answer: ")[0].upper()
                 if user_input != question['correct_answer']:
                     print(f"That's incorrect!\nThe correct answer was {question['correct_answer']}. Better luck next time!\n")
                     is_game_over = True
