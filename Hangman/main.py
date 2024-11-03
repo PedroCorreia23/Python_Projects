@@ -3,7 +3,6 @@ from hangman_display import *
 def main():
     word = "example"
     len_word = len(word)
-    splited_word = list(word)
     positions = []
     attempts = 0
     correct_guesses = 0
@@ -11,10 +10,7 @@ def main():
     print(f"The word as {len_word} letters.")
     print("_ " * len_word)
     print()
-    #print(splited_word)
-
-    
-    
+   
     while correct_guesses < len_word and attempts < 7:
         guess = input("Guess a letter: ")
         found = False 
@@ -27,7 +23,7 @@ def main():
                 found = True
         
         if not found:
-            print("Letter not in the word u dumb bitch")
+            print("Letter not in the word.")
             display_hangman(attempts)
             attempts += 1 
 
