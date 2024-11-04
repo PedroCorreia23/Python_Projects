@@ -2,18 +2,24 @@ import os
 import shutil
 
 main_dir = r'C:\Users\pedro\OneDrive\Ambiente de Trabalho\file_organizer'
-subdirectory_name = "images"
 
-destination_folder = os.path.join(main_dir, subdirectory_name)
+file_categories = {
+    "Images": ['.png', '.jpg', '.jpeg'],
+    "Documents": ['.doc', '.docx', '.txt', '.xls', '.xlsx', '.pdf'],
+    "Videos": ['.mp4', '.avi', '.mov'],
+    "Audio": ['.mp3', '.wav'],
+}
+
+destination_folder = os.path.join(main_dir, file_categories.items())
 
 # Ensure the main directory exists
 if os.path.exists(main_dir):
-
+    
     if not os.path.exists(destination_folder):
         os.mkdir(destination_folder)
-        print(f"Directory '{subdirectory_name}' created successfully.")
+        print(f"Directory '{file_categories}' created successfully.")
     else:
-        print(f"Directory '{subdirectory_name}' already exists.")
+        print(f"Directory '{file_categories}' already exists.")
 
     # Iterate over files in the main directory
     for filename in os.listdir(main_dir):
