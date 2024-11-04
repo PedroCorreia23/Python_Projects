@@ -35,6 +35,3 @@ if os.path.exists(main_dir):
                     print(f"An error occurred while moving '{filename}': {e}")
 else:
     print(f"Directory '{dir}' does not exist. Please check the path.")
-
-
-
