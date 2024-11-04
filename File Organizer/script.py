@@ -10,7 +10,6 @@ file_categories = {
     "Audio": ['.mp3', '.wav'],
 }
 
-# Ensure the main directory exists
 if os.path.exists(main_dir):
     
     for category, extensions in file_categories.items():
