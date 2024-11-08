@@ -1,37 +1,67 @@
 import requests
 from datetime import datetime
+import tkinter as tk
+from tkinter import messagebox
 
-API_KEY = "#"
+API_KEY = "dbc0df74b85a74a40682a00cdc651c0e"
 
-city = "Lisbon"
-url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric'
-
-current_time = datetime.now()
-formatted_time = current_time.strftime('%d-%m-%Y %H:%M:%S')
-
-def get_weather():
-
-    response = requests.get(url)
+def setup_window(): 
     
-    if response.status_code == 200:
-        data = response.json()
+    root = tk.Tk()
+    root.title("Weather App")
+    root.geometry("500x500")
 
-        main = data['main']
-        weather = data['weather'][0]
+    label_city = tk.Label(root, text="Enter city: ")
+    label_city.pack(pady=5)
+    entry_city = tk.Entry(root) 
+    entry_city.pack(pady=5)
 
-        temperature = main['temp']
-        feels_like = main['feels_like']
-        humidity = main['humidity']
-        weather_description = weather['description']
+    #Show results 
+    label_results = tk.Label(root, text="", font=("Arial", 12), justify="left")
+    label_results.pack(pady=20)
 
-        print(f"City: {city}")
-        print(f"Temperature: {temperature}°C")
-        print(f"Feels Like: {feels_like}°C")
-        print(f"Humidity: {humidity}%")
-        print(f"Description: {weather_description.capitalize()}")
-        print()
-        print(formatted_time)
+    # Search button
+    button = tk.Button(root, text="Search", command=lambda: get_weather(entry_city, label_results), fg="black")
+    button.pack()
 
-get_weather()
+    return root
 
+
+def get_weather(entry_city, label_results):
+
+    city = entry_city.get()
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric'
+
+    try:
+        response = requests.get(url)
+    
+        if response.status_code == 200:
+            data = response.json()
+
+            main = data['main']
+            weather = data['weather'][0]
+
+            temperature = main['temp']
+            feels_like = main['feels_like']
+            humidity = main['humidity']
+            weather_description = weather['description']
+
+            current_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+
+            result_text = (f"City: {city}\n"
+                           f"Temperature: {temperature}°C\n"
+                           f"Feels Like: {feels_like}°C\n"
+                           f"Humidity: {humidity}%\n"
+                           f"Description: {weather_description.capitalize()}\n\n"
+                           f"Data Retrieved at {current_time}")
+            label_results.config(text = result_text)
+
+        else:
+            messagebox.showerror("Error", "City not found.") 
+
+    except requests.exceptions.RequestException:
+            messagebox.showerror("Error", "Unable to retrieve weather data. Check your internet connection.")
+
+root = setup_window()
+root.mainloop()
 
