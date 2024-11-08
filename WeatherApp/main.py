@@ -3,7 +3,7 @@ from datetime import datetime
 import tkinter as tk
 from tkinter import messagebox
 
-API_KEY = "dbc0df74b85a74a40682a00cdc651c0e"
+API_KEY = ""
 
 def setup_window(): 
     
