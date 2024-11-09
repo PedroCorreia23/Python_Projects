@@ -5,7 +5,7 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 import io
 
-API_KEY = ""
+API_KEY = " "
 
 def setup_window(): 
     
