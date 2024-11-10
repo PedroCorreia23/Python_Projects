@@ -1,11 +1,7 @@
-import requests
-from datetime import datetime
 import tkinter as tk
-from tkinter import messagebox
-from PIL import Image, ImageTk
-import io
 from tkinter import filedialog
-import os
+from PIL import Image, ImageTk
+from main import *
 
 root = tk.Tk()
 
@@ -14,9 +10,11 @@ def setup():
     root.title("Image Filter App")
     root.geometry("700x700")
 
+    #select image button
     open_folder_button = tk.Button(root, text="Select Image", command=select_image)
     open_folder_button.pack(pady=20)
 
+    
     root.mainloop()
 
 def select_image():
@@ -45,5 +43,23 @@ def display_image(image_path):
     canvas.create_image(0, 0, anchor=tk.NW, image=tk_img)
 
     canvas.image = tk_img
+
+    #frame to center the buttons
+    button_frame = tk.Frame(root)
+    button_frame.pack(pady=50)  # Center vertically
+
+    #Grayscale button
+    grayscale = tk.Button(button_frame, text="Grayscale", command=apply_grayscale)
+    grayscale.pack(side=tk.LEFT, padx=5)
+
+    #Sepia button
+    sepia = tk.Button(button_frame, text="Sepia", command=apply_sepia)
+    sepia.pack(side=tk.LEFT, padx=5)
+
+    #Blur button
+    blur = tk.Button(button_frame, text="Blur", command=apply_blur)
+    blur.pack(side=tk.LEFT, padx=5)
+
+
 
 setup()
